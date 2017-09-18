@@ -22,7 +22,7 @@ public class MUT {
 	}
 	
     public void extractInformations() {
-    	File f = new File("Files/Log-clients-themes.txt");
+    	File f = new File("Log-clients-themes.txt");
     	File fU = new File("Files/Users.txt");
     	File fT = new File("Files/Themes.txt");
     	File fM = new File("Files/MUT.txt");
@@ -34,6 +34,9 @@ public class MUT {
         }
 
         try {
+        	File d = new File("Files/");
+        	if (!d.exists()) d.mkdir();
+        	
         	if (!fU.exists()) fU.createNewFile();
         	if (!fT.exists()) fT.createNewFile();
         	if (!fM.exists()) fM.createNewFile();
