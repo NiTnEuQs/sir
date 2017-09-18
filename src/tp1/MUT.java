@@ -12,15 +12,25 @@ import java.util.List;
 
 public class MUT {
 
+	// Attributes
+	
 	private List<String> usersList;
 	private List<String> themesList;
 	private int[][] mut;
 
+	// Constructors
+	
 	public MUT () {
 		usersList = new ArrayList<String>();
 		themesList = new ArrayList<String>();
 	}
 	
+	// Functions
+	
+	/**
+	 * Extrait les informations du fichier <b>Log-clients-themes.txt"</b> dans
+	 * les fichiers "Files/Users.txt", "Files/Themes.txt", "Files.MUT.txt", "Files/Resume.txt"
+	 */
     public void extractInformations() {
     	File f = new File("Log-clients-themes.txt");
     	File fU = new File("Files/Users.txt");
@@ -110,10 +120,20 @@ public class MUT {
 		}
     }
     
+    /**
+     * Récupère le user dans la ligne <b>line</b>
+     * @param line Ligne du fichier <b>Log-clients-themes.txt</b>
+     * @return
+     */
     public String getUser (String line) {
     	return line.split(";")[1];
     }
     
+    /**
+     * Récupère le thème dans la ligne <b>line</b>
+     * @param line Ligne du fichier <b>Log-clients-themes.txt</b>
+     * @return
+     */
     public String getTheme (String line) {
     	return line.split(";")[2];
     }
